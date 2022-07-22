@@ -78,7 +78,7 @@ function evaluate () {
     displayNumbers = "";
 }
 
-// add functionality to operator buttons
+// operator buttons functionality
 const opButtons = document.querySelectorAll('.operator');
 for (let op of opButtons) {
     op.addEventListener('click', () => {
@@ -94,3 +94,12 @@ for (let op of opButtons) {
         }
     });
 }
+
+// clear button functionality
+const clear = document.getElementById("clear");
+clear.addEventListener('click', () => {
+    displayNumbers = "";
+    display.textContent = 0;
+    operandStack = [0];
+    curOperator = '+';
+});
