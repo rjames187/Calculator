@@ -61,6 +61,10 @@ for (let btn of numButtons) {
         if (curOperator === "/" && btn.id === "0") {
             return;
         }
+        // multiple periods not allowed
+        if (btn.id === "." && displayNumbers.includes(".")){
+            return;
+        }
         displayNumbers += btn.id;
         display.textContent = displayNumbers;
     });
