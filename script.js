@@ -107,3 +107,12 @@ clear.addEventListener('click', () => {
     operandStack = [0];
     curOperator = '+';
 });
+
+// back button functionality
+const back = document.getElementById("back");
+back.addEventListener('click', () => {
+    if (displayNumbers.length > 0) {
+        displayNumbers = displayNumbers.slice(0, displayNumbers.length - 1);
+        display.textContent = displayNumbers;
+    }
+});
