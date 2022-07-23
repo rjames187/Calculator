@@ -52,6 +52,7 @@ let displayNumbers = "";
 const display = document.getElementById("display");
 let operandStack = [0];
 let curOperator = "+";
+let eqElig = false;
 
 // add functionality to number buttons
 const numButtons = document.querySelectorAll('.digit');
@@ -71,6 +72,8 @@ for (let btn of numButtons) {
         }
         displayNumbers += btn.id;
         display.textContent = displayNumbers;
+
+        eqElig = true;
     });
 }
 
@@ -94,11 +97,19 @@ for (let op of opButtons) {
             evaluate();
             
             curOperator = op.id;
+
+            eqElig = false;
         } else {
+            if (!eqElig) {
+                return;
+            }
+
             evaluate();
             
             operandStack = [0]
             curOperator = '+';
+            
+            eqElig = false;
         }
     });
 }
