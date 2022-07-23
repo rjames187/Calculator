@@ -65,6 +65,10 @@ for (let btn of numButtons) {
         if (btn.id === "." && displayNumbers.includes(".")){
             return;
         }
+        // limit of screen width
+        if (displayNumbers.length >= 10) {
+            return;
+        }
         displayNumbers += btn.id;
         display.textContent = displayNumbers;
     });
