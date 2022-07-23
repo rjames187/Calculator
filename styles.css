@@ -1,3 +1,41 @@
 body {
     background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 600px;
+    height: 760px;
+    
+    background-color: blue;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+#top-half {
+    flex: 1;
+}
+
+#bottom-half {
+    flex: 1;
+    display: flex;
+}
+
+#btn-cont-left {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#btn-cont-right {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.btn-row {
+    display: flex;
+    flex-direction: row;
 }
