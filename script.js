@@ -77,9 +77,16 @@ for (let btn of numButtons) {
     });
 }
 
+function roundForDisplay (num) {
+    let numNonDec = +num.toFixed(0).length;
+    let numDec = 10 - numNonDec - 1;
+    return num.toFixed(numDec);
+}
+
 function evaluate () {
     operandStack.push(displayNumbers);
     let result = operate(curOperator, operandStack[0], operandStack[1]);
+    result = roundForDisplay(result);
     operandStack.shift();
     operandStack.shift();
     operandStack.unshift(result);
